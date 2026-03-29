@@ -78,6 +78,7 @@ class AlwaysOnVpnService : VpnService() {
     private var readerThread: Thread? = null
 
     private fun establishTunnel() {
+        AppLog.d(TAG, "establishTunnel")
         if (vpnInterface != null) {
             AppLog.d(TAG, "Tunnel already established")
             return
@@ -135,13 +136,12 @@ class AlwaysOnVpnService : VpnService() {
         instance = this
         _serviceRunning.value = true
         val isSystemStart = intent?.action == SERVICE_INTERFACE
-        _startedBySystem.value = isSystemStart
-        _alwaysOn.value = isAlwaysOn
-        _lockdown.value = isLockdownEnabled
-        AppLog.d(TAG, "systemStart=$isSystemStart isAlwaysOn=$isAlwaysOn lockdown=$isLockdownEnabled")
 
-        if (intent?.getBooleanExtra("auto_connect", false) == true || isSystemStart) {
+        refreshState()
+
+        if (isSystemStart) {
             establishTunnel()
+            refreshState()
         }
 
         return START_STICKY

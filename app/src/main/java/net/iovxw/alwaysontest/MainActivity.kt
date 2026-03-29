@@ -132,32 +132,6 @@ class MainActivity : ComponentActivity() {
 
                         Spacer(modifier = Modifier.height(8.dp))
 
-                        // Standalone: Start service + connect tunnel (above the split buttons)
-                        Button(
-                            onClick = {
-                                AppLog.newGroup()
-                                val prepareIntent = VpnService.prepare(this@MainActivity)
-                                if (prepareIntent != null) {
-                                    AppLog.d(TAG, "Need VPN permission, launching...")
-                                    vpnPermissionLauncher.launch(prepareIntent)
-                                } else {
-                                    AppLog.d(TAG, "Starting service + connecting tunnel...")
-                                    startService(Intent(this@MainActivity, AlwaysOnVpnService::class.java).apply {
-                                        putExtra("auto_connect", true)
-                                    })
-                                }
-                            },
-                            modifier = Modifier.fillMaxWidth(),
-                            enabled = !serviceRunning
-                        ) {
-                            Text(stringResource(R.string.btn_start_and_connect))
-                        }
-                        Text(
-                            stringResource(R.string.hint_tunnel_required),
-                            style = MaterialTheme.typography.bodySmall,
-                            color = MaterialTheme.colorScheme.onSurfaceVariant
-                        )
-
                         // Row 1: Service toggle + Tunnel toggle
                         Row(
                             modifier = Modifier.fillMaxWidth(),
@@ -228,7 +202,7 @@ class MainActivity : ComponentActivity() {
                         }
 
                         Text(
-                            stringResource(R.string.hint_system_start),
+                            stringResource(R.string.hint),
                             style = MaterialTheme.typography.bodySmall,
                             color = MaterialTheme.colorScheme.onSurfaceVariant
                         )

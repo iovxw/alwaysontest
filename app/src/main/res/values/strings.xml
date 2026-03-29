@@ -14,8 +14,7 @@
     <string name="verdict_not_running">✗ Service not running</string>
     <string name="status_yes">✓ Yes</string>
     <string name="status_no">✗ No</string>
-    <string name="btn_start_and_connect">Start Service &amp; Connect Tunnel</string>
-    <string name="hint_tunnel_required">isAlwaysOn and isLockdownEnabled only return correct values after the tunnel is connected.\nThey may still be false right after startup — tap \"Refresh\" to update.\nYou can use \"Start Service\" first to observe, then \"Connect Tunnel\" to compare.</string>
+    <string name="hint">isAlwaysOn and isLockdownEnabled only return correct values after the tunnel is connected.\nYou can use "Start Service" first to observe, then "Connect Tunnel" to compare.\n"Started by System" can also be used to determine Always-on status — if the system starts this service with the VpnService intent, it means the app is configured as Always-on VPN in system settings.</string>
     <string name="btn_start_service">Start Service</string>
     <string name="btn_stop_service">Stop Service</string>
     <string name="btn_connect_tunnel">Connect Tunnel</string>
@@ -25,5 +24,4 @@
     <string name="log_title">Logs</string>
     <string name="log_clear">Clear</string>
     <string name="log_empty">(No logs)</string>
-    <string name="hint_system_start">"Started by System" can also be used to determine Always-on status — if the system starts this service with the VpnService intent, it means the app is configured as Always-on VPN in system settings.</string>
 </resources>

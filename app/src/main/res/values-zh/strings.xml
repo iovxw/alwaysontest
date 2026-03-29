@@ -14,8 +14,7 @@
     <string name="verdict_not_running">✗ 服务未运行</string>
     <string name="status_yes">✓ 是</string>
     <string name="status_no">✗ 否</string>
-    <string name="btn_start_and_connect">启动服务并连接隧道</string>
-    <string name="hint_tunnel_required">isAlwaysOn 和 isLockdownEnabled 两个属性只有在隧道连接之后才会返回正确的值。\nVPN 刚启动时这两个值可能均为 false，需要点「刷新状态」手动更新。\n可以先用「启动服务」观察属性变化，再手动「连接隧道」对比差异。</string>
+    <string name="hint">isAlwaysOn 和 isLockdownEnabled 两个属性只有在隧道连接之后才会返回正确的值。\n可以先用「启动服务」观察属性变化，再手动「连接隧道」对比差异。\n「被系统启动」也可以用来判断是否为 Always-on VPN——如果系统通过 VpnService intent 启动了本服务，说明本应用已在系统设置中被配置为「始终开启的 VPN」。</string>
     <string name="btn_start_service">启动服务</string>
     <string name="btn_stop_service">停止服务</string>
     <string name="btn_connect_tunnel">连接隧道</string>
@@ -25,5 +24,4 @@
     <string name="log_title">日志</string>
     <string name="log_clear">清除</string>
     <string name="log_empty">(无日志)</string>
-    <string name="hint_system_start">「被系统启动」也可以用来判断是否为 Always-on VPN——如果系统通过 VpnService intent 启动了本服务，说明本应用已在系统设置中被配置为「始终开启的 VPN」。</string>
 </resources>
