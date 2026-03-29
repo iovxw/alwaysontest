@@ -227,6 +227,12 @@ class MainActivity : ComponentActivity() {
                             }
                         }
 
+                        Text(
+                            stringResource(R.string.hint_system_start),
+                            style = MaterialTheme.typography.bodySmall,
+                            color = MaterialTheme.colorScheme.onSurfaceVariant
+                        )
+
                         HorizontalDivider()
 
                         val logGroups by AppLog.logGroups.collectAsState()

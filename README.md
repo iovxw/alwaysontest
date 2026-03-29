@@ -12,7 +12,7 @@ Android provides `isAlwaysOn` and `isLockdownEnabled` on `VpnService` to let VPN
 
 - **They only return correct values after a VPN tunnel is established** via `VpnService.Builder.establish()`. Before that, both always return `false`.
 - After `establish()`, there may be a brief delay before the values are updated—manual refresh may be needed.
-- When Always-on VPN is enabled, the system starts the service with `intent.action = VpnService.SERVICE_INTERFACE`, which can serve as an additional signal.
+- "Started by System" can also be used to determine Always-on status — if the system starts this service with the VpnService `intent.action = VpnService.SERVICE_INTERFACE`, it means the app is configured as Always-on VPN in system settings.
 
 This app provides a UI to experiment with these behaviors interactively.
 
@@ -55,7 +55,7 @@ Android 在 `VpnService` 上提供了 `isAlwaysOn` 和 `isLockdownEnabled` 方�
 
 - **必须在 `VpnService.Builder.establish()` 建立隧道之后，返回值才是正确的**。在此之前两个值始终返回 `false`。
 - `establish()` 之后可能有短暂延迟，需要手动刷新才能看到更新后的值。
-- 当系统开启了 Always-on VPN，会通过 `intent.action = VpnService.SERVICE_INTERFACE` 启动服务，可以作为辅助判断依据。
+- 「被系统启动」也可以用来判断是否为 Always-on VPN——如果系统通过 VpnService `intent.action = VpnService.SERVICE_INTERFACE` 启动了本服务，说明本应用已在系统设置中被配置为「始终开启的 VPN」。
 
 本应用提供了一个可交互的界面，方便你实验和观察这些行为。
 
