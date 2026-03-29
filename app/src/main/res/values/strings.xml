@@ -1,0 +1,28 @@
+<resources>
+    <string name="app_name">AlwaysOnTest</string>
+    <string name="title">Always-on VPN Detection</string>
+    <string name="status_service_running">VPN Service Running</string>
+    <string name="status_tunnel_established">VPN Tunnel Established</string>
+    <string name="status_started_by_system">Started by System (intent=VpnService)</string>
+    <string name="status_is_always_on">isAlwaysOn</string>
+    <string name="status_is_lockdown">isLockdownEnabled</string>
+    <string name="verdict_title">Verdict</string>
+    <string name="verdict_confirmed">✓ Confirmed: This app is the Always-on VPN</string>
+    <string name="verdict_system_no_tunnel">\? System started the service, but tunnel not established — cannot confirm isAlwaysOn</string>
+    <string name="verdict_system_not_always_on">\? System started the service, but isAlwaysOn returns false</string>
+    <string name="verdict_running_not_system">\? Service running, but not started by system</string>
+    <string name="verdict_not_running">✗ Service not running</string>
+    <string name="status_yes">✓ Yes</string>
+    <string name="status_no">✗ No</string>
+    <string name="btn_start_and_connect">Start Service &amp; Connect Tunnel</string>
+    <string name="hint_tunnel_required">isAlwaysOn and isLockdownEnabled only return correct values after the tunnel is connected.\nThey may still be false right after startup — tap \"Refresh\" to update.\nYou can use \"Start Service\" first to observe, then \"Connect Tunnel\" to compare.</string>
+    <string name="btn_start_service">Start Service</string>
+    <string name="btn_stop_service">Stop Service</string>
+    <string name="btn_connect_tunnel">Connect Tunnel</string>
+    <string name="btn_disconnect_tunnel">Disconnect Tunnel</string>
+    <string name="btn_refresh">Refresh</string>
+    <string name="btn_vpn_settings">VPN Settings</string>
+    <string name="log_title">Logs</string>
+    <string name="log_clear">Clear</string>
+    <string name="log_empty">(No logs)</string>
+</resources>
